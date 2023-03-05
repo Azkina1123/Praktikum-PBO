@@ -40,15 +40,15 @@ public class Main {
                     break;
             
                 case "2":
-                    showProduk("read");
+                    showProduk("Lihat");
                     break;
             
                 case "3":
-                    showProduk("update");
+                    showProduk("Ubah");
                     break;
             
                 case "4":
-                    showProduk("delete");
+                    showProduk("Hapus");
                     break;
             
                 case "0":
@@ -84,13 +84,11 @@ public class Main {
     
             switch (pilihan) {
 
-                // tambah produk bibit
                 case "1":
                     createProduk("Bibit");
                     running = false;
                     break;
     
-                // tambah produk benih
                 case "2":
                     createProduk("Benih");
                     running = false;
@@ -149,14 +147,14 @@ public class Main {
 
                 case "1":
                 
-                if (mode == "read") {
-                        if (!printList("Lihat", "Bibit", listBibit)) return;
+                if (mode == "Lihat") {
+                        if (!printList(mode, "Bibit", listBibit)) return;
                         readProduk(listBibit);
-                    } else if (mode == "update") {
-                        if (!printList("Ubah", "Bibit", listBibit)) return;
+                    } else if (mode == "Ubah") {
+                        if (!printList(mode, "Bibit", listBibit)) return;
                         updateProduk(listBibit);
-                    } else if (mode == "delete") {
-                        if (!printList("Hapus", "Bibit", listBibit)) return;
+                    } else if (mode == "Hapus") {
+                        if (!printList(mode, "Bibit", listBibit)) return;
                         deleteProduk(listBibit);
                     }
                     
@@ -164,14 +162,14 @@ public class Main {
                     break;
                     
                     case "2":
-                    if (mode == "read") {
-                        if (!printList("Lihat", "Benih", listBenih)) return;
+                    if (mode == "Lihat") {
+                        if (!printList(mode, "Benih", listBenih)) return;
                         readProduk(listBenih);
-                    } else if (mode == "update") {
-                        if (!printList("Ubah", "Benih", listBenih)) return;
+                    } else if (mode == "Ubah") {
+                        if (!printList(mode, "Benih", listBenih)) return;
                         updateProduk(listBenih);
-                    } else if (mode == "delete") {
-                        if (!printList("Hapus", "Benih", listBenih)) return;
+                    } else if (mode == "Hapus") {
+                        if (!printList(mode, "Benih", listBenih)) return;
                         deleteProduk(listBenih);
                     }
                     
@@ -180,14 +178,14 @@ public class Main {
                     
                     case "3":
                     
-                    if (mode == "read") {
-                        if (!printList("Lihat", "Pupuk", listPupuk)) return;
+                    if (mode == "Lihat") {
+                        if (!printList(mode, "Pupuk", listPupuk)) return;
                         readProduk(listPupuk);
-                    } else if (mode == "update") {
-                        if (!printList("Ubah", "Pupuk", listPupuk)) return;
+                    } else if (mode == "Ubah") {
+                        if (!printList(mode, "Pupuk", listPupuk)) return;
                         updateProduk(listPupuk);
-                    } else if (mode == "delete") {
-                        if (!printList("Hapus", "Pupuk", listPupuk)) return;
+                    } else if (mode == "Hapus") {
+                        if (!printList(mode, "Pupuk", listPupuk)) return;
                         deleteProduk(listPupuk);
                     }
                     
@@ -340,7 +338,5 @@ public class Main {
         System.out.println("\n\t  Program dihentikan.\n");
         System.exit(0);
     }
-
-
 
 }
