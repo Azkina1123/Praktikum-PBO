@@ -6,12 +6,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /*
+ * Tema : Pendataan Produk pada Toko Tanaman Online
+ * 
  * AZIIZAH OKI SHOFRINA
  * 2109106004 
  * 
  * Inheritance yang diterapkan:
  * 1. Single Inheritance        = Akun -> Admin
  * 2. Hierarchical Inheritance  = Produk -> Bibit, Benih, Pupuk
+ * 
  */
 
 public class Main {
@@ -30,13 +33,35 @@ public class Main {
     // RUNNING ===============================================================
     
     public static void main(String[] args) throws IOException {
+        boolean login = false;
+
+        while (!login) {
+            System.out.println("\n\n   Harap login terlebih dahulu! \n");
+
+            String username, password;
+
+            System.out.print("      Username : ");
+            username = input.readLine();
+            
+            System.out.print("      Password : ");
+            password = input.readLine();
+
+            if (
+                username.equals(akunAdmin.getUsername()) &&
+                password.equals(akunAdmin.getPassword())
+            ) {
+                login = true;
+            }
+        }
+
+        System.out.println("\n\n-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-");
         System.out.println("\n   Sistem Pendataan Produk pada      ");
         System.out.println("           Toko Tanaman                ");
 
         boolean running = true;
         while (running) {
             System.out.println("\n-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-\n");
-            System.out.println("             Menu Utama              \n");
+            System.out.println("            Menu Utama              \n");
             System.out.println("     1 | Tambahkan produk baru         ");
             System.out.println("     2 | Lihat daftar produk           ");
             System.out.println("     3 | Ubah rincian produk           ");
