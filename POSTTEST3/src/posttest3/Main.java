@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /*
- * Tema : Pendataan Produk pada Toko Tanaman Online
+ * Tema : Pendataan Produk pada Toko Tanaman
  * 
  * AZIIZAH OKI SHOFRINA
  * 2109106004 
