@@ -58,7 +58,7 @@ public class Benih extends Produk {
         this.stok = Integer.parseInt(Main.input.readLine());
     }
 
-    public void printAttributes() throws IOException {
+    public void printAttributes() {
         System.out.printf("\n%1$c%1$c  %2$-22s Rp %3$s\n", (char) 16, this.nama, this.harga);
         System.out.println("ID Benih  : " + this.id);
         System.out.println("Berat     : " + this.berat + " gr");

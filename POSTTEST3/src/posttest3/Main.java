@@ -30,8 +30,6 @@ public class Main {
     // RUNNING ===============================================================
     
     public static void main(String[] args) throws IOException {
-        setDefault();
-
         System.out.println("\n   Sistem Pendataan Produk pada      ");
         System.out.println("           Toko Tanaman                ");
 
@@ -82,12 +80,6 @@ public class Main {
     }
 
     // TAMPILAN ===============================================================
-
-    public static void setDefault() throws IOException {
-        listBibit.add(new Bibit(1, "1", 1, 1, 1, 1, "1"));
-        listBibit.add(new Bibit(2, "2", 2, 2, 2, 2, "2"));
-        listBibit.add(new Bibit(3, "3", 3, 3, 3, 3, "3"));
-    }
 
     // menu tampilkan produk
     private static void showProduk(String mode) throws IOException {
@@ -140,9 +132,7 @@ public class Main {
                     break;
 
                 case "Hapus":
-                    if (pilihan == 1) deleteProduk(produk[pilihan-1], listBibit);
-                    if (pilihan == 2) deleteProduk(produk[pilihan-1], listBenih);
-                    if (pilihan == 3) deleteProduk(produk[pilihan-1], listPupuk);
+                    deleteProduk(produk[pilihan-1]);
                     running = false;
 
                     break;
@@ -230,17 +220,17 @@ public class Main {
             int no = Integer.parseInt(input.readLine());
 
             if (produk == "Bibit") {
-                listBibit.get(no-1).printAttributes();
-    
+                akunAdmin.readBibit(listBibit.get(no-1));
+                
             } else if (produk == "Benih") {
-                listBenih.get(no-1).printAttributes();
-    
+                akunAdmin.readBenih(listBenih.get(no-1));
+                
             } else if (produk == "Pupuk") {
-                listPupuk.get(no-1).printAttributes();
-    
+                akunAdmin.readPupuk(listPupuk.get(no-1));
             }
 
         } catch (Exception e) {
+            System.out.println("\n      Produk tidak ditemukan.");
             return;
         }
 
@@ -257,63 +247,43 @@ public class Main {
             int no = Integer.parseInt(input.readLine());
             
             if (produk == "Bibit") {
-                listBibit.get(no-1).printAttributes();
-                System.out.println();
-                listBibit.get(no-1).setAttributes();
-                
+                akunAdmin.updateBibit(listBibit.get(no-1));
             } else if (produk == "Benih") {
-                listBenih.get(no-1).printAttributes();
-                System.out.println();
-                listBenih.get(no-1).setAttributes();
-                
+                akunAdmin.updateBenih(listBenih.get(no-1));
             } else if (produk == "Pupuk") {
-                listPupuk.get(no-1).printAttributes();
-                System.out.println();
-                listPupuk.get(no-1).setAttributes();
+                akunAdmin.updatePupuk(listPupuk.get(no-1));
             }
             
         } catch (Exception e) {
+            System.out.println("\n      Produk tidak ditemukan.");
             return;
         }
 
     }
 
     // hapus produk
-    private static void deleteProduk(String produk, ArrayList list) throws IOException {
+    private static void deleteProduk(String produk) throws IOException {
         if (!printList("Lihat", produk)) return;
 
         System.out.print("\nHapus produk nomor =: ");
-        int no;
+
         try {
-            no = Integer.parseInt(input.readLine());
+            int no = Integer.parseInt(input.readLine());
     
             if (produk == "Bibit") {
-                listBibit.get(no-1).printAttributes();
-    
+                akunAdmin.deleteBibit(listBibit.get(no-1));
             } else if (produk == "Benih") {
-                listBenih.get(no-1).printAttributes();
-    
+                akunAdmin.deleteBenih(listBenih.get(no-1));
             } else if (produk == "Pupuk") {
-                listPupuk.get(no-1).printAttributes();
+                akunAdmin.deletePupuk(listPupuk.get(no-1));
             }
             
         } catch (Exception e) {
+            System.out.println("\n      Produk tidak ditemukan.");
             return;
 
         }
-
-        System.out.println("\nKetik '1' untuk menghapus produk");
-        System.out.print("=: ");
-        String jawaban = input.readLine();
         
-        // hapus produk
-        if (jawaban.equals("1")) {
-            list.remove(no-1);
-            System.out.println("\nProduk berhasil dihapus!");
-            return;
-        }
-        
-        System.out.println("\nProduk gagal dihapus.");
     }
 
     // keluar program
