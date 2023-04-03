@@ -5,6 +5,7 @@ import java.io.IOException;
 public class Benih extends Produk {
     private double berat;
     private int isi;
+    private final String produk = "Benih";
 
     // CONSTRUCTOR ========================================
 
@@ -113,20 +114,20 @@ public class Benih extends Produk {
 
     @Override
     public void addMessage() {
-        System.out.println("\nBenih berhasil ditambahkan!");
+        System.out.println("\n" + this.produk + " berhasil ditambahkan!");
     }
 
     @Override
     public void updateMessage() {
-        System.out.println("\nRincian benih berhasil diubah!");
+        System.out.println("\nRincian " + this.produk + " berhasil diubah!");
     }
 
     @Override
     public void deleteMessage(String pilihan) {
         if (pilihan.equals("1")) {
-            System.out.println("\nBenih berhasil dihapus!");
+            System.out.println("\n" + this.produk + " berhasil dihapus!");
             return;
         }
-        System.out.println("\nBenih gagal dihapus.");
+        System.out.println("\n" + this.produk + " gagal dihapus.");
     }
 }

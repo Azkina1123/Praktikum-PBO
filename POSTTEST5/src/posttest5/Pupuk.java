@@ -6,6 +6,7 @@ public class Pupuk extends Produk {
     private String tipe;       // padat atau cair
     private double isi;        // berat (gr) atau isi (ml)
     private String kandungan;
+    private final String produk = "Benih";
 
     // CONSTRUCTOR ========================================
     public Pupuk(int id, String nama, int harga, int stok, String tipe, double isi, String kandungan) {
@@ -124,20 +125,20 @@ public class Pupuk extends Produk {
 
     @Override
     public void addMessage() {
-        System.out.println("\nPupuk berhasil ditambahkan!");
+        System.out.println("\n" + this.produk + " berhasil ditambahkan!");
     }
 
     @Override
     public void updateMessage() {
-        System.out.println("\nRincian pupuk berhasil diubah!");
+        System.out.println("\nRincian " + this.produk + " berhasil diubah!");
     }
 
     @Override
     public void deleteMessage(String pilihan) {
         if (pilihan.equals("1")) {
-            System.out.println("\nPupuk berhasil dihapus!");
+            System.out.println("\n" + this.produk + " berhasil dihapus!");
             return;
         }
-        System.out.println("\nPupuk gagal dihapus.");
+        System.out.println("\n" + this.produk + " gagal dihapus.");
     }
 }

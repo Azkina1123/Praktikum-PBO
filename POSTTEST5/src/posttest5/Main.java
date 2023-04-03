@@ -11,11 +11,18 @@ import java.util.ArrayList;
  * AZIIZAH OKI SHOFRINA
  * 2109106004 
  * 
- * Penggunaan keyword final
- * o Class Bibit -> createID()
- * o Class Benih -> createID()
- * o Class Pupuk -> createID()
- * 
+ * Penggunaan keyword final pada:
+ * > Class
+ *    o Class Admin
+ * > Method
+ *    o Class Bibit -> createID()
+ *    o Class Benih -> createID()
+ *    o Class Pupuk -> createID()
+ * > Atribut
+ *    o Class Bibit -> produk
+ *    o Class Benih -> produk
+ *    o Class Pupuk -> produk
+ *
  * Penggunaan abstract pada class
  * o Class Akun
  * o Class Produk

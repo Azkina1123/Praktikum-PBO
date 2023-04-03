@@ -6,6 +6,7 @@ public class Bibit extends Produk {
     private double berat;   // berat tanaman (kg)
     private double tinggi;
     private String pembiakan;
+    private final String produk = "Bibit";
 
     // CONSTRUCTOR ========================================
 
@@ -128,21 +129,21 @@ public class Bibit extends Produk {
     
     @Override
     public void addMessage() {
-        System.out.println("\nBibit berhasil ditambahkan!");
+        System.out.println("\n" + this.produk + " berhasil ditambahkan!");
     }
 
     @Override
     public void updateMessage() {
-        System.out.println("\nRincian bibit berhasil diubah!");
+        System.out.println("\nRincian " + this.produk + " berhasil diubah!");
     }
 
     @Override
     public void deleteMessage(String pilihan) {
         if (pilihan.equals("1")) {
-            System.out.println("\nBibit berhasil dihapus!");
+            System.out.println("\n" + this.produk + " berhasil dihapus!");
             return;
         }
-        System.out.println("\nBibit gagal dihapus.");
+        System.out.println("\n" + this.produk + " gagal dihapus.");
     }
 
     
